@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Calculator</title>
+        <style>
+            #calculator {
+                width: 250px;
+                background-color: #0acff6;
+                border: 1px solid rgb(204, 204, 204);
+                border-radius: 10px;
+                padding: 15px;
+                box-shadow: 0px 0px 5px #ccc;
+            }
+
+            #result {
+                background-color: #fff;
+                width: 100px;
+                height: 40px;
+                font-size: 20px;
+                text-align: right;
+                margin-bottom: 10px;
+                padding-right: 10px;
+                border: 1px solid rgb(94, 255, 0);
+                border-radius: 10px;
+            }
+
+            button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                border: none;
+                border-radius: 3px;
+                background-color: rgb(16, 15, 15);
+                color: rgb(249, 244, 244);
+                box-shadow: 0px 0px 0px 5px rgb(255, 255, 255);
+                cursor: pointer;
+            }
+
+            button.operator {
+                background-color: rgb(42, 251, 0);
+                color: rgb(17, 15, 15);
+            }
+
+            button.clear {
+                background-color: #fb0000;
+                color: #fff;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <div id="result"></div> 
+            <button onclick="addToResult('7')">7</button>
+            <button onclick="addToResult('8')">8</button>
+            <button onclick="addToResult('9')">9</button>
+            <button onclick="addToResult('+')"  class="operator">+</button>
+            <button onclick="addToResult('4')">4</button>
+            <button onclick="addToResult('5')">5</button>
+            <button onclick="addToResult('6')">6</button>
+            <button onclick="addToResult('-')"  class="operator">-</button>
+            <button onclick="addToResult('1')">1</button>
+            <button onclick="addToResult('2')">2</button>
+            <button onclick="addToResult('3')">3</button>
+            <button onclick="addToResult('*')"  class="operator">*</button>
+            <button onclick="addToResult('0')">0</button>
+            <button onclick="clearResult()" class="clear">C</button>
+            <button onclick="CalculateResult()">=</button>
+            <button onclick="addToResult('/')" class="operator">/</button>
+        </div>
+        <script>
+            function addToResult(value) {
+                document.getElementById("result").innerHTML += value;
+            }
+
+            function clearResult(){
+                document.getElementById("result").innerHTML = "";
+            }
+
+            function CalculateResult() {
+                var result = document.getElementById("result").innerHTML;
+                var answer = eval(result);
+                document.getElementById("result").innerHTML = answer;
+            }
+        </script>
+    </body>
+</html>

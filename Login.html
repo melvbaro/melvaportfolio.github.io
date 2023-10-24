@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)file:///C:/Users/User/login.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<head>
+    <style>
+        body {
+            background-color: darkkhaki;
+            color:black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input {
+            border: 2px lightblue;
+            width: 100px;
+            padding: 5px 20px;
+            border-radius: 50px;
+            text-align: center;
+            color: black;
+            font-size: 15px;
+        }
+        input:hover{
+            background-color: black;
+            color:whitesmoke;
+        }
+        button {
+            background-color: black;
+            color: darkturquoise;
+        }
+        button:hover{
+            background-color: aliceblue;
+            color: black;
+        }
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+            font-style: oblique;
+        }
+        .border {
+            border: 5px solid black; 
+            padding: 30px;
+            width: 300px;    
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="border">
+            <h1>LOGIN</h1>
+        <input id="username" type="text" placeholder="Username" onkeydown="count()"><br><br>
+        <input id="password" type="password" placeholder="Password" onkeydown="count()"><br><br>
+        
+        <center><button class="btn" id="login" onclick="check()">LOGIN</button></center>
+           </table>
+        </div>
+    </center>
+    <script>
+        function check(){
+        var Username = document.getElementById("username").value;
+        var Password = document.getElementById("password").value;
+        var username = 'melva';
+        var password ='baro';
+
+        if ((Username == "") && (Password == "")){
+            alert("All Textboxes are empty");
+        } else if ((Username == "") && (Password == Password)){
+            alert("Username is Empty");
+        }
+        else if ((Username == Username)&&(Password == "")){
+            alert("Password is Empty");
+        }
+        else if ((Username == username)&&(Password == password)){
+            alert("logged In successfully");
+        }
+        else if ((Username == username)&&(Password !== password)){
+            alert("Incorrect Password");
+        }
+        else if ((Username == username)&&(Password == password)){
+            alert("Correct password and Username");
+        }
+        else if ((Username !== username) && (Password == password)){
+            alert("Incorrect Username");
+        }
+        else{
+            alert("Incorrect Username and Password");
+        }
+    }
+    </script>
+</body>
+
+</html>
